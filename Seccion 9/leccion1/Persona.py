@@ -2,18 +2,20 @@
 class Persona:
 
     def __init__(self, nombre, apellidos, edad, *terminos, **valores):
-        self.nombre = nombre
-        self.apellidos = apellidos
-        self.edad = edad
+        self._nombre = nombre
+        self._apellidos = apellidos
+        self._edad = edad
         self.terminos = terminos
         self.valores = valores
+
+    # declaracion de atributos encapsulados _
 
     def mostrar_detalles(self):
         print(f'''
         Objeto: {self}
-        Nombre: {self.nombre}
-        Apellidos: {self.apellidos}
-        Edad: {self.edad}
+        Nombre: {self._nombre}
+        Apellidos: {self._apellidos}
+        Edad: {self._edad}
         Terminos: {self.terminos}
         Valores: {self.valores}
         ''')
@@ -31,8 +33,8 @@ guy2 = Persona('Dave', 'grohl', 52)
 # ''')
 
 # modificacion de atributos
-chabon1.nombre = 'Ignacio'
-chabon1.edad = 6
+chabon1._nombre = 'Ignacio'
+chabon1._edad = 6
 
 # print(f'''
 # Objeto: chabon1
@@ -42,8 +44,8 @@ chabon1.edad = 6
 # ''')
 
 # obtener atributos
-print(chabon1.__getattribute__('nombre'))
-print(guy2.nombre)
+print(chabon1.__getattribute__('_nombre'))
+print(guy2._nombre)
 
 
 # utilizando metodos de instancia
