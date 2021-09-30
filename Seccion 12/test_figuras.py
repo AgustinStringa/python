@@ -19,3 +19,10 @@ nombre_color_rec = input('introduce el nombre del color ')
 hexa_rec = input('introduce el codigo hexadecimal del color ')
 rectangulo1 = Rectangulo(base, alt, nombre_color_rec, hexa_rec)
 print(rectangulo1)
+
+
+# figura_cuadrado = Cuadrado(6, 'celeste', "#007bff")
+# figura_rectangulo = Rectangulo(20, 18, "verde", "0 255 0")
+
+print(Cuadrado.mro())
+print(Rectangulo.mro())

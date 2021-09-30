@@ -1,4 +1,12 @@
-class FiguraGeometrica:
+# ABC - Abstract Base Class
+
+# ABC es la clase como tal y abstractmethod es un decorador, como @property
+from abc import ABC, abstractmethod
+
+# la clase extiende de la clase ABC
+
+
+class FiguraGeometrica(ABC):
 
     def _validar(self, valor):
         return True if valor > 0 else False
@@ -16,6 +24,10 @@ class FiguraGeometrica:
 
     def __str__(self):
         return f'''Figura Geometrica -> [Base: {self._base} Altura: {self._altura}]'''
+
+    @abstractmethod
+    def calcular_area(self):
+        pass
 
     """
     BASE
