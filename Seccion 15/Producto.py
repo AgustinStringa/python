@@ -8,8 +8,15 @@ class Producto:
         self._id_producto = Producto.contador_productos
 
     def __str__(self):
-        return f'nombre_producto: {self._nombre_producto}, precio: {self._precio_producto}, id: {self._id_producto}'
+        return f'[id: {self._id_producto} nombre: {self._nombre_producto}, precio: {self._precio_producto}]'
+
+    @property
+    def precio(self):
+        return self._precio_producto
 
 
-mocovi = Producto('arroz', 25.5)
-Manianita = Producto('yerba', 50)
+if __name__ == '__main__':
+    mocovi = Producto('arroz', 25.5)
+    manianita = Producto('yerba', 50)
+    print(mocovi)
+    print(manianita)

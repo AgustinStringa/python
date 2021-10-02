@@ -12,3 +12,7 @@ print(names[0:2])
 
 # recorre desde el indice indicado hasta el final
 print(names[1:])
+
+# add
+names.append('alejandro')
+print(names)
