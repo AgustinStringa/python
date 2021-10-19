@@ -1,0 +1,10 @@
+03:41:43 PM: DEBUG [logger_base.py 15  mensaje a lvl debug]
+03:41:43 PM: INFO [logger_base.py 16  mensaje a lvl info]
+03:41:43 PM: WARNING [logger_base.py 17  mensaje a lvl warning]
+03:41:43 PM: ERROR [logger_base.py 18  mensaje a lvl error]
+03:41:43 PM: CRITICAL [logger_base.py 19  mensaje a lvl critical]
+04:19:20 PM: DEBUG [Persona.py 56 id_persona: 0
+nombre: armando
+apellido: bancos
+email: elviolado,@gmail.com
+        ]
