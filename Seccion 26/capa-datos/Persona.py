@@ -11,7 +11,7 @@ log.basicConfig(level= log.DEBUG, format='%(asctime)s: %(levelname)s [%(filename
 
 
 class Persona:
-    def __init__(self, id_persona, nombre, apellido, email):
+    def __init__(self, nombre, apellido, email, id_persona =None):
         self._id_persona = id_persona
         self._nombre = nombre
         self._apellido = apellido
@@ -22,6 +22,14 @@ class Persona:
 nombre: {self._nombre}
 apellido: {self._apellido}
 email: {self._email}'''
+
+    @property
+    def id_persona(self):
+        return self._id_persona
+
+    @id_persona.setter
+    def id_persona(self, id_persona):
+        self._id_persona = id_persona
 
     @property
     def nombre(self):

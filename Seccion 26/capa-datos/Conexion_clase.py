@@ -45,12 +45,14 @@ class ConexionClase:
             try:
                 cursor = cls.get_conexion().cursor()
                 cls._CURSOR = cursor
-                print(f'se abrió correctamente el cursor {cls._CURSOR}')
+                log.info(f'se abrió correctamente el cursor {cls._CURSOR}')
                 return cls._CURSOR
             except Exception as e:
                 log.error(f'Ocurrio un error al obtener el cursor {e}')
+                sys.exit()
         else:
             return cls._CURSOR
 
 
-ConexionClase.get_cursor()
+if __name__ == "__main__":
+    ConexionClase.get_cursor()
