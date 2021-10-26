@@ -1,0 +1,7 @@
+para que los programas funcionen correctamente cuando se abren desde el explorador de archivos es necesario:
+tener el entorno virtual creado y acceder a la aplicacion python de dicho directorio
+esto puede darnos un error si intentamos abrir un archivo .py que importa modulos externos con la app python corriente.
+El archivo se llama python.py y se incluye en la carpeta Scripts del entorno virtual generado en el "new project" de pycharm
+
+si los archivos se ejecutan constantemente sin un stop puede que se cierren.
+Esto es evitable con la introduccion de una linea input() al final del codigo

@@ -11,7 +11,7 @@ log.basicConfig(level= log.DEBUG, format='%(asctime)s: %(levelname)s [%(filename
                     log.StreamHandler()
                 ])
 
-if __name__ == "asdasd":
+if __name__ == "__main__":
     log.debug(' mensaje a lvl debug')
     log.info(' mensaje a lvl info')
     log.warning(' mensaje a lvl warning')
