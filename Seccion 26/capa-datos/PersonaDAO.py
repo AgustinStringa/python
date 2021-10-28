@@ -25,7 +25,8 @@ class PersonaDAO:
                 nueva_consulta = f'{cls._SELECCIONAR} {cadena}'
                 cursor.execute(nueva_consulta)
                 registro = cursor.fetchone()
-                persona_nueva = Persona(registro[0], registro[1], registro[2], registro[3])
+                persona_nueva = Persona(
+                    registro[0], registro[1], registro[2], registro[3])
                 return persona_nueva
             else:
                 cursor.execute(cls._SELECCIONAR)
@@ -43,20 +44,24 @@ class PersonaDAO:
             log.debug(f'persona a insertar {persona}')
             try:
                 with CursorPool() as cursor:
-                    cursor.execute(cls._INSERTAR, (persona.nombre, persona.apellido, persona.email))
+                    cursor.execute(cls._INSERTAR, (persona.nombre,
+                                   persona.apellido, persona.email))
                     reg_modificados = cursor.rowcount
                     if reg_modificados > 0:
                         log.debug(f'objeto insertado {persona}')
-                        log.debug(f'modificacion exitosa, {reg_modificados} agregados')
+                        log.debug(
+                            f'modificacion exitosa, {reg_modificados} agregados')
                     else:
-                        log.warning('Por algun motivo no hubo modificaciones en la Base de Datos')
+                        log.warning(
+                            'Por algun motivo no hubo modificaciones en la Base de Datos')
 
             except Exception as e:
                 log.error(f'Error al insertar. Error: {e}')
                 log.error('Saliendo del sistema'.center(50, '-'))
                 sys.exit()
         else:
-            log.error(f'Parametro introducido: {persona} no es válido para esta operacion')
+            log.error(
+                f'Parametro introducido: {persona} no es válido para esta operacion')
             sys.exit()
 
     @classmethod
@@ -67,9 +72,11 @@ class PersonaDAO:
                 cursor.execute(cls._ELIMINAR, (id,))
                 reg_modificados = cursor.rowcount
                 if reg_modificados > 0:
-                    log.debug(f'modificacion exitosa, {reg_modificados} eliminado/s')
+                    log.debug(
+                        f'modificacion exitosa, {reg_modificados} eliminado/s')
                 else:
-                    log.warning(f'Es probable que el id ya se haya eliminado o que dicho id ({id}) no exista')
+                    log.warning(
+                        f'Es probable que el id ya se haya eliminado o que dicho id ({id}) no exista')
             except Exception as e:
                 log.error(f'Error en la eliminación {e}')
                 log.error('Saliendo del sistema'.center(50, '-'))
@@ -85,14 +92,17 @@ class PersonaDAO:
                     mods = cursor.rowcount
                     if mods > 0:
                         log.debug(f'objeto actualizado {persona}')
-                        log.debug(f'Modificacion exitosa, {mods} actualizado correctamente')
+                        log.debug(
+                            f'Modificacion exitosa, {mods} actualizado correctamente')
                     else:
-                        log.warning(f'Es probable que el id ya se haya eliminado o que dicho id ({id}) no exista')
+                        log.warning(
+                            f'Es probable que el id ya se haya eliminado o que dicho id ({id}) no exista')
             except Exception as e:
                 log.error(f'Ocurrio un error con el UPDATE {e}')
                 sys.exit()
         else:
-            log.error(f'parametro "{persona}" incorrecto para esta operacion. Se requiere un objeto de clase Persona')
+            log.error(
+                f'parametro "{persona}" incorrecto para esta operacion. Se requiere un objeto de clase Persona')
             sys.exit()
 
 
@@ -102,7 +112,7 @@ if __name__ == "__main__":
     #for e in PersonaDAO.seleccionar():
     #    print(e)
     #    print('------------')    
-    
+
     """
 
     """
@@ -131,4 +141,3 @@ if __name__ == "__main__":
     probando eliminar
     # PersonaDAO.eliminar(18)    
     """
-
