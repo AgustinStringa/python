@@ -33,19 +33,20 @@ while entrada != 5:
 
     if (1 <= entrada <= 4):
 
+    # Listar
         if entrada == 1:
             try:
                 for user in UsuarioDAO.seleccionar():
                     print(user)
             except Exception as e:
                 log.error(e, type(e))
-
+    # Insertar
         elif entrada == 2:
             try:
                 print('Preparate para insertar un nuevo usuario')
                 nombre_insert = input('Introduce el nombre del nuevo usuario ')
                 pass_insert = input('Introduce el password del nuevo usuario ')
-                user_insert = Usuario(nombre_insert, pass_insert)
+                user_insert = Usuario(nombre=nombre_insert, password=pass_insert)
 
                 if UsuarioDAO.insertar(user_insert) > 0:
                     print('insertado correctamente')
@@ -54,7 +55,7 @@ while entrada != 5:
 
             except Exception as e:
                 log.error(e, type(e))
-
+    # Actualizar
         elif entrada == 3:
             try:
                 if UsuarioDAO.actualizar() > 0:
@@ -64,6 +65,7 @@ while entrada != 5:
             except Exception as e:
                 print(f'error {e, type(e)}')
 
+    # Eliminar
         elif entrada == 4:
             if UsuarioDAO.eliminar() > 0:
                 print(f' se ha eliminado correctamente el registro ')
