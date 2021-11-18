@@ -1,11 +1,12 @@
 # el unpacking es como el destructuring en js
-numeros = 1,2,3
+numeros = 1, 2, 3
 
-num1,num2, _ = numeros
+num1, num2, _ = numeros
 
 print(num1, num2)
 
-lista_bandas = ['foo fighters', 'nirvana', 'the cranberries', 'meat muppets', 'pearl jam', 'soundgarden', 'queen', 'penultima', 'ultima']
+lista_bandas = ['foo fighters', 'nirvana', 'the cranberries',
+                'meat muppets', 'pearl jam', 'soundgarden', 'queen', 'penultima', 'ultima']
 
 band1, band2, *resto, penult, ult = lista_bandas
 
@@ -28,3 +29,5 @@ def return_many(numero, letra):
 
 mi_numero, mi_letra = return_many(4, 's')
 print(mi_numero, mi_letra)
+
+input()
