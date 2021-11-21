@@ -6,7 +6,13 @@ try:
     import sys
     import os
 
-    print(sys.path)
+    # metodo para el btn1
+
+    def click_btn1():
+        print('haciendo click')
+        btnClick.config(text='boton clickado')
+        boton2 = ttk.Button(root, text="boton agregado")
+        boton2.pack()
 
     root = tk.Tk()
     # print(type(root)) # <class 'tkinter.Tk'>
@@ -31,7 +37,7 @@ try:
     #root.tk.call('wm', 'iconphoto', root._w, img)
 
     # haciendo un boton
-    btnClick = ttk.Button(root, text="click me outta me")
+    btnClick = ttk.Button(root, text="click me outta me", command=click_btn1)
     btnClick.pack()
 
     root.mainloop()
