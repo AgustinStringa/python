@@ -45,16 +45,19 @@ print(btn1.configure().keys())
 btn2 = ttk.Button(root, text="boton 2",
                   command=click_btn1)
 btn2.grid(row=1, column=0, sticky='NSWE')
+# columnspan=2, rowspan=3
 
 
 btn3 = ttk.Button(root, text="boton 3")
-btn3.grid(row=0, column=1, sticky='NSWE')
+btn3.grid(row=0, column=1, sticky='NSWE', ipadx=10, ipady=10, padx=15, pady=15)
 
 # btn 4 fue declarado con tk, en lugar de ttk
 # por defecto, los de ttk son mas visibles
 # tk es personalizable
-btn4 = tk.Button(root, text="boton 4", command=click_btn4)
-btn4.grid(row=1, column=1, sticky="")
+btn4 = tk.Button(root, text="boton 4", command=click_btn4,
+                 activebackground="#FFF000")
+btn4.grid(row=1, column=1, sticky="NW", ipadx=10, ipady=10, padx=15, pady=15)
+print(btn4.configure().keys())
 
 lbl = tk.Label(text=f"{variable}", bg="white", fg="blue")
 lbl.grid(row=2, column=0)
