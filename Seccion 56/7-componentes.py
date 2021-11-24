@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import Widget, ttk, messagebox, scrolledtext
+from tkinter import ttk, messagebox, scrolledtext
+from time import sleep
 
 root = tk.Tk()
 root.geometry('600x400')
@@ -50,6 +51,23 @@ def mk_tabulador3(ctrl_tabuldor):
     btn_combo.grid(row=1, column=0)
 
 
+def mk_tabulador4(ctrl_tabulador):
+    tab4 = ttk.Frame(ctrl_tabulador)
+    ctrl_tabulador.add(tab4, text="tab4")
+    # creando progressbar
+    barra = ttk.Progressbar(tab4, orient='horizontal', length=550)
+    barra.grid(row=0, column=0)
+
+    for e in range(0, 101):
+        sleep(0.05)
+        barra['value'] = e
+        barra.update()
+    #barra['value'] = 50
+    # codigo para manejar la barra de progreso
+    # barra.start()
+    #root.after('3000', barra.stop)
+
+
 def crear_tabs():
     """
     EL CTRL TABULADOR USA PACK DENTRO DEL ROOT
@@ -65,6 +83,8 @@ def crear_tabs():
     mk_tabulador2(ctrl_tabulador)
     # =====TABULADOR 3======
     mk_tabulador3(ctrl_tabulador)
+    # =====TABULADOR 4======
+    mk_tabulador4(ctrl_tabulador)
 
 
 # comenzando procesos
